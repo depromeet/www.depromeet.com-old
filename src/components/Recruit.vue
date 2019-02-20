@@ -86,7 +86,7 @@ export default class Recruit extends Vue {
         width: 230px;
         height: 50px;
         font-size: 16px;
-        font-weight: 300;
+        font-weight: 400;
         font-style: normal;
         font-stretch: normal;
         line-height: 1.63;
