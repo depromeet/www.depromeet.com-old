@@ -50,7 +50,7 @@ import Logo from '@/assets/logo.svg';
   },
 })
 export default class Header extends Vue {
-  scrollFix(hashbang: string): void {
+  scrollFix = (hashbang: string) => {
     window.location.href = hashbang;
   }
 }
