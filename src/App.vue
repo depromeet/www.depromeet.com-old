@@ -54,7 +54,7 @@ body {
 }
 
 .container {
-  width: 1000px;
+  width: 1080px;
   margin: 0 auto;
 }
 

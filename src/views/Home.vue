@@ -107,6 +107,7 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 .home {
+  min-width: 1080px;
   .home-carousel-container {
     background-color: #222;
     height: 500px;
