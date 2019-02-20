@@ -10,10 +10,14 @@
         <h6>
           Designer & Programmer Networking Union Circle
         </h6>
-        <button @click.native="scrollFix('#recruit')">
+        <router-link
+          class="apply"
+          to="#vision"
+          @click.native="scrollFix('#recruit')"
+        >
           6기 지원하기
           <arrow />
-        </button>
+        </router-link>
       </div>
     </div>
     <div class="container">
@@ -95,7 +99,7 @@ import Arrow from '@/assets/arrow.svg';
   },
 })
 export default class Home extends Vue {
-  scrollFix(hashbang: string): void {
+  scrollFix = (hashbang: string) => {
     window.location.href = hashbang;
   }
 }
@@ -137,7 +141,7 @@ export default class Home extends Vue {
       margin-bottom: 20px;
     }
 
-    button {
+    .apply {
       width: 116px;
       height: 27px;
       background-color: #ffffff;

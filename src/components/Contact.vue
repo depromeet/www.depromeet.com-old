@@ -41,17 +41,11 @@ import Instagram from '@/assets/ico-instagram.svg';
   },
 })
 export default class Contact extends Vue {
-  goToMedium(): void {
-    window.open('https://medium.com/@depromeet', '_blank');
-  }
-  
-  goToInstagram(): void {
-    window.open('https://www.instagram.com/depromeet/', '_blank');
-  }
+  goToMedium = () => window.open('https://medium.com/@depromeet', '_blank');
 
-  goToFacebook(): void {
-    window.open('https://www.facebook.com/depromeet', '_blank');
-  }
+  goToInstagram = () => window.open('https://www.instagram.com/depromeet/', '_blank');
+
+  goToFacebook = () => window.open('https://www.facebook.com/depromeet', '_blank');
 }
 </script>
 
