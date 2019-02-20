@@ -138,18 +138,18 @@ export default class Home extends Vue {
       letter-spacing: normal;
       text-align: left;
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
 
     .apply {
-      width: 116px;
-      height: 27px;
+      width: 230px;
+      height: 50px;
       background-color: #ffffff;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      font-size: 12px;
+      font-size: 16px;
       font-weight: 500;
       font-style: normal;
       font-stretch: normal;
