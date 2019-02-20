@@ -1,6 +1,6 @@
 {
-  "name": "homepage",
-  "short_name": "homepage",
+  "name": "Depromeet",
+  "short_name": "depromeet",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
