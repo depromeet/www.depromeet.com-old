@@ -27,13 +27,9 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Recruit extends Vue {
-  recruitDesigner(): void {
-    window.open('https://goo.gl/forms/86ckS7myeiEDa9O42', '_blank');
-  }
+  recruitDesigner = () => window.open('https://goo.gl/forms/86ckS7myeiEDa9O42', '_blank');
 
-  recruitDeveloper(): void {
-    window.open('https://goo.gl/forms/3vAWC7tRlws3zxT63', '_blank');
-  }
+  recruitDeveloper = () => window.open('https://goo.gl/forms/3vAWC7tRlws3zxT63', '_blank');
 }
 </script>
 
