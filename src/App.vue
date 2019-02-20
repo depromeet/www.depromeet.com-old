@@ -24,7 +24,7 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 #app {
   font-family: 'Noto Sans KR', Helvetica, Arial, sans-serif;
