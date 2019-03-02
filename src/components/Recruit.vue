@@ -39,9 +39,14 @@ export default class Recruit extends Vue {
   flex-direction: row;
   align-items: center;
   margin-bottom: 63px;
+  flex-wrap: wrap;
 
   .recruit-carousel {
     margin-right: 50px;
+
+    img {
+      width: 100%;
+    }
   }
 
   .recruit-content {
@@ -82,6 +87,7 @@ export default class Recruit extends Vue {
       display: flex;
       flex-direction: row;
       margin-top: 28px;
+      flex-wrap: wrap;
       button {
         width: 230px;
         height: 50px;

@@ -72,6 +72,7 @@ export default class Manager extends Vue {}
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 38px;
+    overflow: hidden;
 
     .manager {
       &:not(:last-child) {
