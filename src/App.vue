@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <div class="container">
-      <app-header />
-    </div>
+    <app-header />
     <router-view />
     <app-footer />
   </div>
@@ -32,7 +30,9 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #212121;
+  overflow: hidden;
 }
+
 #nav {
   padding: 30px;
   a {
@@ -51,11 +51,26 @@ html, body {
 
 body {
   color: #212121;
+  padding-top: 70px;
 }
 
-.container {
-  width: 1080px;
+.container  {
   margin: 0 auto;
+}
+@media screen and (max-width: 480px) {
+  .container {
+    width: 375px;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contaienr {
+    width: 760px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .container {
+    width: 960px;
+  }
 }
 
 a, button {

@@ -104,11 +104,15 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 .home {
-  min-width: 1080px;
+  /* min-width: 1080px; */
+  @media screen and (max-width: 480px) {
+    .home-carousel-container {
+      padding-left: 30px;
+    }
+  }
   .home-carousel-container {
-    background-color: #222;
+    background-color: #222222;
     height: 500px;
-
     .container {
       height: 100%;
       display: flex;
@@ -139,11 +143,22 @@ export default class Home extends Vue {
       margin-bottom: 40px;
     }
 
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+      }
+
+      h6 {
+        font-size: 10px;
+      }
+    }
+
     .apply {
+      display: none;
       width: 230px;
       height: 50px;
       background-color: #ffffff;
-      display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
@@ -201,6 +216,7 @@ export default class Home extends Vue {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
+      flex-wrap: wrap;
 
       .vision-item {
         width: 215px;
