@@ -40,4 +40,17 @@ footer {
     color: #222222;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+
+}
+
+@media screen and (min-width: 961px) {
+}
 </style>

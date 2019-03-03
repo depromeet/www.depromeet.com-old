@@ -55,13 +55,13 @@ export default class Contact extends Vue {
   background-color: #222222;
 
   .container {
+    width: 100%;
     height: 100%;
     padding-top: 54px;
     padding-bottom: 63px;
   }
 
   h1 {
-    font-size: 30px;
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
@@ -76,6 +76,7 @@ export default class Contact extends Vue {
   }
 
   .contact-title {
+    font-size: 30px;
     margin-bottom: 13px;
   }
 
@@ -88,6 +89,7 @@ export default class Contact extends Vue {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 
     .contact-item {
       width: 70px;
@@ -98,7 +100,57 @@ export default class Contact extends Vue {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .contact-container {
+    height: 100%;
+  }
+
+  .contact-content {
+    font-size: 20px;
+  }
+
+  .contact-items {
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 auto;
+
+    .contact-item {
+      margin-right: 20px;
+
+      &:nth-child(2), &:nth-child(4) {
+        margin-right: 0;
+      }
+      
+      &:nth-child(3), &:nth-child(4) {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+  .contact-items {
+    .contact-item {
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .contact-content {
+    font-size: 30px;
+  }
+
+  .contact-items {
+    .contact-item {
       &:not(:last-child) {
         margin-right: 30px;
       }

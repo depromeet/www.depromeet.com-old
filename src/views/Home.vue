@@ -10,14 +10,6 @@
         <h6>
           Designer & Programmer Networking Union Circle
         </h6>
-        <router-link
-          class="apply"
-          to="#vision"
-          @click.native="scrollFix('#recruit')"
-        >
-          6기 지원하기
-          <arrow />
-        </router-link>
       </div>
     </div>
     <div class="container">
@@ -74,8 +66,6 @@
           </div>
         </div>
       </div>
-
-      <recruit id="recruit" />
     </div>
 
     <manager id="manager" />
@@ -86,7 +76,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Recruit from '@/components/Recruit.vue';
 import Manager from '@/components/Manager.vue';
 import Contact from '@/components/Contact.vue';
 import Arrow from '@/assets/arrow.svg';
@@ -94,7 +83,6 @@ import Arrow from '@/assets/arrow.svg';
 @Component({
   components: {
     Arrow,
-    Recruit,
     Manager,
     Contact,
   },
@@ -182,27 +170,6 @@ export default class Home extends Vue {
 
       h6 {
         font-size: 10px;
-      }
-    }
-
-    .apply {
-      display: none;
-      width: 230px;
-      height: 50px;
-      background-color: #ffffff;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      font-size: 16px;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      letter-spacing: -0.4px;
-      text-align: left;
-      color: #222222;
-
-      svg {
-        margin-left: 7px;
       }
     }
   }
@@ -297,6 +264,10 @@ export default class Home extends Vue {
     &.mobile {
       padding: 0 30px;
 
+      .vision {
+        width: calc(100% - 60px);
+      }
+
       .vision-title, .vision-description {
         text-align: left;
       }
@@ -360,6 +331,10 @@ export default class Home extends Vue {
   .home-carousel-container {
     height: 400px;
   }
+
+  .container {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
@@ -393,8 +368,11 @@ export default class Home extends Vue {
   .home-carousel-container {
     height: 500px;
     .container {
-      padding: 0;
+      padding: 0 30px;
     }
+  }
+  .vision {
+    padding: 0 30px;
   }
 }
 </style>
