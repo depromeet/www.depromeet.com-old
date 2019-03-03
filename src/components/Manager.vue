@@ -2,6 +2,7 @@
 <div class="manager-container">
   <div class="container">
     <h2 class="title">6th Manager</h2>
+    <p>6기를 기획한 운영진을 소개합니다.</p>
     <div class="managers">
       <div class="manager">
         <div class="profile">
@@ -50,6 +51,17 @@ export default class Manager extends Vue {}
   height: 500px;
   background-color: #f0f0f0;
 
+  p {
+    font-size: 16px;
+    font-weight: 100;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.63;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #222222;
+  }
+
   .container {
     height: 100%;
     padding-top: 60px;
@@ -72,6 +84,12 @@ export default class Manager extends Vue {}
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 38px;
+    overflow: hidden;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     .manager {
       &:not(:last-child) {
@@ -116,5 +134,20 @@ export default class Manager extends Vue {}
       }
     }
   }
+}
+
+@media screen and (max-width: 480px) {
+  .managers {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 960px) {
+  .managers {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 961px) {
 }
 </style>
