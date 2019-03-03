@@ -126,7 +126,7 @@ export default class Contact extends Vue {
       &:nth-child(2), &:nth-child(4) {
         margin-right: 0;
       }
-      
+
       &:nth-child(3), &:nth-child(4) {
         margin-top: 20px;
       }
