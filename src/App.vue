@@ -52,6 +52,8 @@ html, body {
 body {
   color: #212121;
   padding-top: 70px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container  {

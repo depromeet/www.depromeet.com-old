@@ -9,13 +9,13 @@
 
     <div class="contact-items">
       <div class="contact-item">
-        <kakao />
+        <kakao @click="goToKakao()" />
       </div>
       <div class="contact-item" @click="goToFacebook()">
         <facebook />
       </div>
       <div class="contact-item">
-        <email />
+        <medium @click="goToMedium()" />
       </div>
       <div class="contact-item" @click="goToInstagram()">
         <instagram />
@@ -29,23 +29,25 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Kakao from '@/assets/ico-kakao.svg';
 import Facebook from '@/assets/ico-facebook.svg';
-import Email from '@/assets/ico-mail.svg';
+import Medium from '@/assets/ico-medium.svg';
 import Instagram from '@/assets/ico-instagram.svg';
 
 @Component({
   components: {
     Kakao,
     Facebook,
-    Email,
+    Medium,
     Instagram,
   },
 })
 export default class Contact extends Vue {
+  goToKakao = () => window.open('http://pf.kakao.com/_xoxmcxed/chat', '_blank');
+
   goToMedium = () => window.open('https://medium.com/@depromeet', '_blank');
 
   goToInstagram = () => window.open('https://www.instagram.com/depromeet/', '_blank');
 
-  goToFacebook = () => window.open('https://www.facebook.com/depromeet', '_blank');
+  goToFacebook = () => window.open('https://www.facebook.com/depromeet/', '_blank');
 }
 </script>
 
