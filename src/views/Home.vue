@@ -21,11 +21,15 @@
       </div>
     </div>
     <div class="container">
-      <div class="vision" id="vision">
-        <h2 class="vision-title">Depromeet Vision</h2>
+      <div
+        class="vision"
+        id="vision"
+        :class="{ mobile: getDeviceType === 'mobile', tablet: getDeviceType === 'tablet' }"
+      >
+        <h2 class="vision-title">Depromeet<br v-if="getDeviceType !== 'desktop'"> Vision</h2>
         <p class="vision-description">
-          디프만은 2-30대 디자이너, 프로그래머의 네트워크로서<br>
-          <span>디자이너와 프로그래머 간의 생산적인 모임을 지향</span>합니다.
+          디프만은 2-30대<br v-if="getDeviceType === 'mobile'"> 디자이너, 프로그래머의 네트워크로서<br>
+          <span>디자이너와 프로그래머 간의<br v-if="getDeviceType === 'mobile'"> 생산적인 모임을 지향</span>합니다.
         </p>
 
         <div class="vision-items">
@@ -96,6 +100,34 @@ import Arrow from '@/assets/arrow.svg';
   },
 })
 export default class Home extends Vue {
+  width: number = document.documentElement.clientWidth;
+
+  onResize() {
+    // Typescript에서 데이터 초기화 후 변경이 안됨...
+    // 왜 그러는걸까나
+    this.width = document.documentElement.clientWidth;
+  }
+
+  created() {
+    window.addEventListener('resize', this.onResize);
+  }
+
+  destroyed() {
+    window.removeEventListener('resize', this.onResize);
+  }
+
+  get getDeviceType() {
+    let device = 'desktop';
+
+    if (this.width <= 468) {
+      device = 'mobile';
+    } else if (this.width <= 768) {
+      device = 'tablet';
+    }
+
+    return device;
+  }
+
   scrollFix = (hashbang: string) => {
     window.location.href = hashbang;
   }
@@ -104,7 +136,6 @@ export default class Home extends Vue {
 
 <style lang="scss" scoped>
 .home {
-  /* min-width: 1080px; */
   @media screen and (max-width: 480px) {
     .home-carousel-container {
       padding-left: 30px;
@@ -112,7 +143,7 @@ export default class Home extends Vue {
   }
   .home-carousel-container {
     background-color: #222222;
-    height: 500px;
+
     .container {
       height: 100%;
       display: flex;
@@ -261,6 +292,108 @@ export default class Home extends Vue {
           color: #222222;
         }
       }
+    }
+
+    &.mobile {
+      padding: 0 30px;
+
+      .vision-title, .vision-description {
+        text-align: left;
+      }
+
+      .vision-items {
+        display: flex;
+        flex-direction: column;
+
+        .vision-item {
+          &:not(:last-child) {
+            margin-bottom: 40px;
+          }
+          &:nth-child(2) {
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 280px;
+
+            .vision-item-title, .vision-item-content {
+              position: absolute;
+              text-align: right;
+              right: 0;
+            }
+
+            .vision-item-title {
+              top: 0;
+
+              h2 {
+                margin-left: 20px;
+              }
+            }
+
+            .vision-item-content {
+              top: 70px;
+              width: 230px;
+            }
+          }
+        }
+      }
+    }
+
+    &.tablet {
+      .vision-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .vision-item {
+          width: 280px;
+          &:not(:last-child) {
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-carousel-container {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .home-carousel-container {
+    height: 460px;
+
+    .container {
+      padding: 0 30px;
+
+      h1, h6 {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px) {
+  .home-carousel-container {
+    height: 500px;
+    .container {
+      padding: 0 40px;
+    }
+  }
+
+  .vision {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .home-carousel-container {
+    height: 500px;
+    .container {
+      padding: 0;
     }
   }
 }
