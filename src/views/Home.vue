@@ -115,10 +115,6 @@ export default class Home extends Vue {
 
     return device;
   }
-
-  scrollFix = (hashbang: string) => {
-    window.location.href = hashbang;
-  }
 }
 </script>
 

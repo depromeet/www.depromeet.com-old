@@ -8,22 +8,10 @@
     </div>
     <div class="menu right-side">
       <router-link
-        to="/"
-        class="menu-item active"
-      >
-        HOME
-      </router-link>
-      <router-link
         to="#vision" @click.native="scrollFix('#vision')"
         class="menu-item"
       >
         ABOUT
-      </router-link>
-      <router-link
-        to="#recruit" @click.native="scrollFix('#recruit')"
-        class="menu-item"
-      >
-        DEPROMEET
       </router-link>
       <router-link
         to="#manager" @click.native="scrollFix('#manager')"
@@ -51,30 +39,16 @@
   <div
     class="nav-container"
     :class="{ 'open': navigationStatus }"
+    @focusout="handleFocusOut"
+    tabindex="0"
   >
     <ul>
       <li>
         <router-link
-          to="#manager" @click.native="scrollFix('#manager')"
-          class="menu-item"
-        >
-          HOME
-        </router-link>
-      </li>
-      <li>
-        <router-link
-          to="#manager" @click.native="scrollFix('#manager')"
+          to="#manager" @click.native="scrollFix('#vision')"
           class="menu-item"
         >
           ABOUT
-        </router-link>
-      </li>
-      <li>
-        <router-link
-          to="#manager" @click.native="scrollFix('#manager')"
-          class="menu-item"
-        >
-          DEPROMEET
         </router-link>
       </li>
       <li>
@@ -87,7 +61,7 @@
       </li>
       <li>
         <router-link
-          to="#manager" @click.native="scrollFix('#manager')"
+          to="#manager" @click.native="scrollFix('#contact')"
           class="menu-item"
         >
           CONTACT
@@ -95,6 +69,11 @@
       </li>
     </ul>
   </div>
+
+  <div
+    class="outside"
+    :class="{ active: navigationStatus }"
+    @click="toggleNavigation"></div>
 </div>
 </template>
 
@@ -110,12 +89,23 @@ import Logo from '@/assets/logo.svg';
 export default class Header extends Vue {
   navigationStatus: boolean = false;
 
-  scrollFix = (hashbang: string) => {
-    window.location.href = hashbang;
+  scrollFix(hashbang: string) {
+    this.navigationStatus = !this.navigationStatus;
+    const elementId: string = hashbang.split('#')[1];
+    const element: any = document.getElementById(elementId);
+
+    window.scrollTo({
+      top: element.offsetTop - 70,
+      behavior: 'smooth',
+    });
   }
 
   toggleNavigation() {
     this.navigationStatus = !this.navigationStatus;
+  }
+
+  handleFocusOut() {
+    this.navigationStatus = false;
   }
 }
 </script>
@@ -270,6 +260,19 @@ export default class Header extends Vue {
         }
       }
     }
+  }
+}
+
+.outside {
+  background: transparent;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  display: none;
+
+  &.active {
+    display: block;
   }
 }
 
