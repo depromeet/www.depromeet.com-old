@@ -6,30 +6,35 @@
     <div class="managers">
       <div class="manager">
         <div class="profile">
+          <img src="@/assets/현식.jpeg" alt="현식">
         </div>
         <h3>Hyunsik Yoo</h3>
         <h5>Android Developer</h5>
       </div>
       <div class="manager">
         <div class="profile">
+          <img src="@/assets/재원.jpeg" alt="재원">
         </div>
         <h3>Jaewon Kwon</h3>
         <h5>Python Developer</h5>
       </div>
       <div class="manager">
         <div class="profile">
+          <img src="@/assets/수지.jpeg" alt="수지">
         </div>
         <h3>Suzie Park</h3>
         <h5>UI/Web Designer</h5>
       </div>
       <div class="manager">
         <div class="profile">
+          <img src="@/assets/한나.jpeg" alt="한나">
         </div>
         <h3>Hanna Kim</h3>
         <h5>UI Designer</h5>
       </div>
       <div class="manager">
         <div class="profile">
+          <img src="@/assets/윤지.jpeg" alt="윤지">
         </div>
         <h3>YunJi Lee</h3>
         <h5>Android Developer</h5>
