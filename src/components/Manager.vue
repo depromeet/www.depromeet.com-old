@@ -37,7 +37,7 @@
           <!--<img src="@/assets/한나.jpeg" alt="지원">-->
         </div>
         <h3>Jiwon Lee</h3>
-        <h5>Web Developer</h5>
+        <h5>Frontend Developer</h5>
       </div>
       <div class="manager">
         <div class="profile">
